@@ -1,9 +1,10 @@
 <template>
 
-<div class="underlay" v-show="formstate">
-<div class="contact-form">
+<!-- <div class="underlay" v-show="getFormState" :class="underlayClass"> -->
+<div class="underlay" :class="underlayClass">
+<div class="contact-form" :class="contactFormClass">
   
-  <p @click="closeForm" style="position: absolute; top: 0; right: 0; margin-top: 48px; margin-right: 48px; z-index: 4; text-align: right; cursor: pointer">Close</p>
+  <p class="close-contact-form" @click="closeForm">Close</p>
 
   <div class="contact-form-border-container">
     <form @submit="submitForm">
@@ -73,6 +74,15 @@
     width: 100%;
     height: 100%;
     z-index: 9999;
+    transition: all 1s ease;
+    &.underlay-visible {
+      opacity: 1;
+    }
+    &.underlay-hidden {
+      user-select: none;
+      pointer-events: none;
+      opacity: 0;
+    }
   }
 
   // top level container.
@@ -90,7 +100,13 @@
     background: $form-white;
     z-index: 99999;
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.15);
+    transition: all 0.25s ease-in-out;
+    transition-delay: 0.65s;
+    opacity: 0;
 
+    &.contact-form-visible {
+      opacity: 1;
+    }
     
     // input + label component.
     .form-input {
@@ -132,6 +148,10 @@
         }
       }
 
+    }
+
+    .close-contact-form {
+      position: absolute; top: 0; right: 0; margin-top: 48px; margin-right: 48px; z-index: 4; text-align: right; cursor: pointer
     }
 
     // textarea + label component.
@@ -261,6 +281,23 @@ import axios from 'axios';
 export default {
   name: 'contactForm',
   props: ['formstate'],
+  // data() {
+  //   underlayState: null
+  // },
+  computed: {
+    underlayClass() {
+      // console.log('from underlay', this.formstate, this.underlayClass)
+      // setTimeout(function() {
+        return this.formstate ? 'underlay-visible' : 'underlay-hidden'
+      // }, 2000)
+    },
+    contactFormClass() {
+      return this.formstate ? 'contact-form-visible' : null
+    },
+    getFormState() {
+      return this.formstate
+    }
+  },
   methods: {
     // https://submit-form.com/ONumxfDj
     submitForm(e) {
