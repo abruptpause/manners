@@ -16,17 +16,17 @@
       "></div>
       
       <div class="col-md-10 col-md-offset-1 form-input">
-        <input type="text" id="name" name="name" required placeholder=" " />
+        <input type="text" id="name" name="name" v-model="name" required placeholder=" " />
         <label for="name">My name is</label>
       </div>
 
       <div class="col-md-10 col-md-offset-1 form-input">
-        <input type="email" id="email" name="email" required placeholder=" " />
+        <input type="email" id="email" name="email" v-model="email" required placeholder=" " />
         <label for="email">my email is</label>
       </div>
 
       <div class="col-md-10 col-md-offset-1 form-input">
-        <input type="text" id="number" name="number" placeholder=" " />
+        <input type="text" id="number" name="number" v-model="number" placeholder=" " />
         <label for="name">My number is</label>
       </div>
 
@@ -34,6 +34,7 @@
         <textarea
         id="message"
         name="message"
+        v-model="message"
         required
         ></textarea>
         <label for="message">I'd like to chat about</label>
@@ -63,7 +64,6 @@
   $form-white: #F2F3EB;
   $form-grey: #888888;
 
-
   // form underlay.
   .underlay {
     position: fixed;
@@ -74,7 +74,7 @@
     width: 100%;
     height: 100%;
     z-index: 9999;
-    transition: all 1s ease;
+    transition: all 0.3s ease-out;
     &.underlay-visible {
       opacity: 1;
     }
@@ -101,7 +101,7 @@
     z-index: 99999;
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.15);
     transition: all 0.25s ease-in-out;
-    transition-delay: 0.65s;
+    transition-delay: 0.45s;
     opacity: 0;
 
     &.contact-form-visible {
@@ -207,9 +207,7 @@
     overflow-y: scroll;
   }
 
-
   // these should be nested inside the .contact-form class...
-
   *:focus{
     outline: none;
   }
@@ -233,9 +231,7 @@
     resize: none;
   }
 
-
   // submit <form> button
-
   button {
     border: 2px solid black;
     font-weight: bold;
@@ -249,7 +245,6 @@
       left: -2px;
       width: calc(100% + 4px);
       height: 2px;
-      // background-color: $darkpurple;
       background-color: black;
       opacity: 0;
       user-select: none;
@@ -258,51 +253,50 @@
 
     }
     &:hover {
-      // border-color: transparent;
-      // border-bottom-color: $darkpurple;
       text-shadow: 0px 0px 0.5px $form-grey;
-      // color: white;
-      // background-color: $purple;
       transform: translateY(-4px);
       box-shadow: 0px 2px 0px 0px $form-grey;
-      // &::after {
-
-
-      //   opacity: 1;
-      // }
     }
   }
 
 </style>
 
 <script>
+
 import axios from 'axios';
 
 export default {
   name: 'contactForm',
-  props: ['formstate'],
-  // data() {
-  //   underlayState: null
-  // },
+  props: ['formstate', 'name', 'email', 'number', 'message'],
   computed: {
     underlayClass() {
-      // console.log('from underlay', this.formstate, this.underlayClass)
-      // setTimeout(function() {
-        return this.formstate ? 'underlay-visible' : 'underlay-hidden'
-      // }, 2000)
+      return this.formstate ? 'underlay-visible' : 'underlay-hidden'
     },
     contactFormClass() {
       return this.formstate ? 'contact-form-visible' : null
     },
-    getFormState() {
-      return this.formstate
-    }
   },
   methods: {
-    // https://submit-form.com/ONumxfDj
+
     submitForm(e) {
       e.preventDefault()
-      alert("submitted")
+      console.log("submitting form...")
+      console.log('value of name prop', this.name)
+
+      const formUrl = 'https://submit-form.com/ONumxfDj'
+      const formData = { name: this.name, email: this.email, number: this.number, message: this.message };
+
+      axios
+        .post(formUrl, formData)
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (response) {
+          console.error(response);
+        });
+
+
+
     },
     closeForm() {
       this.$emit('close')
