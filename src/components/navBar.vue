@@ -33,7 +33,8 @@
 
         <li><a href v-scroll-to="'#Testimonial'" class="hover-shadow" @click="closeMobileNav">Testimonials</a></li>
 
-        <li><a href v-scroll-to="'#Price'" class="hover-shadow" @click="closeContactNav">Contact</a></li>
+        <!-- <li><a href v-scroll-to="'#Price'" class="hover-shadow" @click="closeContactNav">Contact</a></li> -->
+        <li><a class="hover-shadow" @click="closeContactNav" style="cursor: pointer;">Contact</a></li>
 
       </ul>
     </div><!-- End navbar-collapse -->

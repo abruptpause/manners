@@ -285,17 +285,18 @@ export default {
 
       const formUrl = 'https://submit-form.com/ONumxfDj'
       const formData = { name: this.name, email: this.email, number: this.number, message: this.message };
+      const context = this;
 
       axios
         .post(formUrl, formData)
         .then(function (response) {
           console.log(response);
+          alert('Thank you, someone will be in touch shortly!')
+          context.$emit('close')
         })
         .catch(function (response) {
           console.error(response);
         });
-
-
 
     },
     closeForm() {
