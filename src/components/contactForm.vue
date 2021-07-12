@@ -41,12 +41,17 @@
       </div>
 
       <div class="col-md-5 col-md-offset-1 form-input">
-        <button type="submit">Send Message</button>
+        <button type="submit">{{sendText}}</button>
       </div>
 
     </form>
+    <button @click="testFunc">TEST</button>
   </div>
 
+</div>
+<div class="submit-status" :class="submitStatusClass">
+  <h4>Thank you, someone will be in touch shortly!</h4>
+  <!-- <button>Okay</button> -->
 </div>
 </div>
 </template>
@@ -73,7 +78,7 @@
     margin-top: 0px !important;
     width: 100%;
     height: 100%;
-    z-index: 9999;
+    z-index: 25;
     transition: all 0.3s ease-out;
     &.underlay-visible {
       opacity: 1;
@@ -98,7 +103,7 @@
     height: 760px;
     max-height: 100vh;
     background: $form-white;
-    z-index: 99999;
+    z-index: 35;
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.15);
     transition: all 0.25s ease-in-out;
     transition-delay: 0.45s;
@@ -106,6 +111,10 @@
 
     &.contact-form-visible {
       opacity: 1;
+    }
+
+    @media (max-width: 991px) {
+      height: 100%;
     }
     
     // input + label component.
@@ -183,10 +192,6 @@
       max-height: 100%;
     }
 
-    @media (max-width: 991px) {
-      height: 100%;
-    }
-
   }
 
   // black border around the form.
@@ -259,6 +264,37 @@
     }
   }
 
+  .submit-status {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 400px;
+    height: 90px;
+    cursor: pointer;
+    background: $purple;
+    color: $offwhite;
+    box-shadow: 3px 3px 1px $darkpurple;
+    z-index: 45;
+    text-align: center;
+    transition: all 0.65s ease-in-out;
+    opacity: 0;
+    transform: translateY(90px);
+    visibility: hidden;
+    user-select: none;
+    pointer-events: none;
+    &.submit-status-show {
+      visibility: visible;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
 </style>
 
 <script>
@@ -268,6 +304,12 @@ import axios from 'axios';
 export default {
   name: 'contactForm',
   props: ['formstate', 'name', 'email', 'number', 'message'],
+  data() {
+    return {
+      sendText: 'Send Message',
+      showStatus: false
+    }
+  },
   computed: {
     underlayClass() {
       return this.formstate ? 'underlay-visible' : 'underlay-hidden'
@@ -275,13 +317,29 @@ export default {
     contactFormClass() {
       return this.formstate ? 'contact-form-visible' : null
     },
+    submitStatusClass() {
+      return this.showStatus ? 'submit-status-show' : null
+    }
   },
   methods: {
 
+    testFunc() {
+      const context = this
+      this.showStatus = true
+      setTimeout(function() {
+        context.showStatus = false
+      }, 3000)
+      setTimeout(function() {
+        context.$emit('close')
+      }, 3500)
+    },
+
     submitForm(e) {
+      
+      this.showStatus = true
+
       e.preventDefault()
-      console.log("submitting form...")
-      console.log('value of name prop', this.name)
+      this.sendText = 'Sending...'
 
       const formUrl = 'https://submit-form.com/ONumxfDj'
       const formData = { name: this.name, email: this.email, number: this.number, message: this.message };
@@ -289,13 +347,15 @@ export default {
 
       axios
         .post(formUrl, formData)
-        .then(function (response) {
-          console.log(response);
+        .then(function () {
           alert('Thank you, someone will be in touch shortly!')
+          context.sendText = 'Send Message'
           context.$emit('close')
         })
-        .catch(function (response) {
-          console.error(response);
+        .catch(function () {
+          alert('Error sending message, please try again!')
+          context.sendText = 'Send Message'
+          context.$emit('close')
         });
 
     },
