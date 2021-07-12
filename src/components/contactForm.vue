@@ -131,7 +131,7 @@
         padding-right: 15px;
         pointer-events: none;
         user-select: none;
-        transition: all 0.45s ease;
+        transition: all 0.45s ease-out;
         transform-origin: bottom right;
       }
 
@@ -322,20 +322,7 @@ export default {
     }
   },
   methods: {
-
-    // testFunc() {
-    //   const context = this
-    //   this.showStatus = true
-    //   setTimeout(function() {
-    //     context.showStatus = false
-    //   }, 3000)
-    //   setTimeout(function() {
-    //     context.$emit('close')
-    //   }, 3500)
-    // },
-
     submitForm(e) {
-      
       e.preventDefault()
       this.sendText = 'Sending...'
 
@@ -346,16 +333,19 @@ export default {
       axios
         .post(formUrl, formData)
         .then(function () {
-          context.sendText = 'Send Message'
+          context.sendText = 'Sent!'
           setTimeout(function() {
             context.showStatus = true
-          }, 250)
+          }, 150)
           setTimeout(function() {
             context.showStatus = false
-          }, 2000)
+          }, 2200)
           setTimeout(function() {
             context.$emit('close')
-          }, 2350)
+          }, 2450)
+          setTimeout(function() {
+            context.sendText = 'Send Message'
+          }, 2650)
         })
         .catch(function () {
           alert('Error sending message, please try again!')
