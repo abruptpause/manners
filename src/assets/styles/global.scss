@@ -10,6 +10,9 @@ $gray: #f8f8f8;
 $lightgray: rgba(238, 238, 238, 0.85);
 $offwhite: rgba(248,248,255, 1);
 $blue: #50C4ED;
+$transparentblue: rgba(80, 196, 237, 0.75);
+$transparentpurple: rgba(116, 103, 174, 0.75);
+$transparentdarkpurple: rgba(84, 74, 130, 0.2);
 
 /* Typography CSS */
 
@@ -1146,7 +1149,7 @@ body
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 2px;
-  box-shadow: 0px 0px 10px -2px rgba(116, 103, 174, 0.5);
+  box-shadow: 5px 5px 1px $transparentblue;
 }
 
 .about-me-photo::before {

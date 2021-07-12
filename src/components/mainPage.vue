@@ -2,7 +2,7 @@
 <template>
 
 <!-- Navigation -->
-<navbar />
+<navbar v-on:open="openForm" />
 
 <!-- Main image -->
 <hero-image />

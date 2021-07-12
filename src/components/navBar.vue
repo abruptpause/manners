@@ -33,7 +33,7 @@
 
         <li><a href v-scroll-to="'#Testimonial'" class="hover-shadow" @click="closeMobileNav">Testimonials</a></li>
 
-        <li><a href v-scroll-to="'#Price'" class="hover-shadow" @click="closeMobileNav">Contact</a></li>
+        <li><a href v-scroll-to="'#Price'" class="hover-shadow" @click="closeContactNav">Contact</a></li>
 
       </ul>
     </div><!-- End navbar-collapse -->
@@ -104,6 +104,10 @@ export default {
     closeMobileNav() {
       this.mobileNavClass = null
       this.hamburgerToggleClass = null
+    },
+    closeContactNav() {
+      this.closeMobileNav()
+      this.$emit('open')
     }
   }
 }
