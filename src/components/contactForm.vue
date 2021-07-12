@@ -45,7 +45,7 @@
       </div>
 
     </form>
-    <button @click="testFunc">TEST</button>
+    <!-- <button @click="testFunc">TEST</button> -->
   </div>
 
 </div>
@@ -282,9 +282,9 @@
     box-shadow: 3px 3px 1px $darkpurple;
     z-index: 45;
     text-align: center;
-    transition: all 0.65s ease-in-out;
+    transition: all 0.35s ease-in-out;
     opacity: 0;
-    transform: translateY(90px);
+    transform: translateY(75px);
     visibility: hidden;
     user-select: none;
     pointer-events: none;
@@ -323,21 +323,19 @@ export default {
   },
   methods: {
 
-    testFunc() {
-      const context = this
-      this.showStatus = true
-      setTimeout(function() {
-        context.showStatus = false
-      }, 3000)
-      setTimeout(function() {
-        context.$emit('close')
-      }, 3500)
-    },
+    // testFunc() {
+    //   const context = this
+    //   this.showStatus = true
+    //   setTimeout(function() {
+    //     context.showStatus = false
+    //   }, 3000)
+    //   setTimeout(function() {
+    //     context.$emit('close')
+    //   }, 3500)
+    // },
 
     submitForm(e) {
       
-      this.showStatus = true
-
       e.preventDefault()
       this.sendText = 'Sending...'
 
@@ -348,9 +346,16 @@ export default {
       axios
         .post(formUrl, formData)
         .then(function () {
-          alert('Thank you, someone will be in touch shortly!')
           context.sendText = 'Send Message'
-          context.$emit('close')
+          setTimeout(function() {
+            context.showStatus = true
+          }, 250)
+          setTimeout(function() {
+            context.showStatus = false
+          }, 2000)
+          setTimeout(function() {
+            context.$emit('close')
+          }, 2350)
         })
         .catch(function () {
           alert('Error sending message, please try again!')
