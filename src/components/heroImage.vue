@@ -73,6 +73,9 @@ $offwhite: rgba(248,248,255, 1);
   background-repeat: no-repeat;
   background-position: top left;
   filter: drop-shadow(-1px 1px 0px $darkpurple);
+  // @media screen and (max-width: 768px) {
+  // filter: drop-shadow(-1px 1px 0px $darkpurple);
+  // }
 }
 
 </style>

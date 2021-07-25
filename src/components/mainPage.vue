@@ -111,7 +111,7 @@
 <!-- Citations -->
 <div class="container">
   <div class="row">
-    <div class="col-md-12" style="text-align: center; color: #333;">
+    <div class="col-md-12" style="margin-top: 18px; margin-bottom: 4px; text-align: center; color: #333; opacity: 0.95">
       <p><sup>1</sup> <cite>Data from Institute of Medicine of the National Academies, 2015</cite></p>
       <p><sup>2</sup> <cite>Data from the NHPCO - National Hospice and Palliative Care Organization, 2018</cite></p>
       <p><sup>3</sup> <cite>Source: 2014 NHPCO African-American Outreach Guide</cite></p>
@@ -133,7 +133,7 @@
       </div>
       <div class="row">
         <div class="col-sm-12 footer-copyright">
-          © 2021
+          © 2021 Your Path Home with Manners
         </div>
       </div>
     </div>
