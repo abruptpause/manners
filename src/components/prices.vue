@@ -58,7 +58,7 @@
     <!-- Price card 3 -->
 		<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1 price-card" data-aos="fade-up" data-aos-delay="100">
 			<div class="pricing-box">
-            	<div class="pricing-box-price"><span>$ </span><strong>30</strong><span> / month</span></div>
+            	<div class="pricing-box-price"><span>$ </span><strong>30</strong><span> / hour</span></div>
                 <h3>End of Life Doula</h3>
 	      		    <h4>(Minimum of 2 hours)</h4>
                 <div class="pricing-box-features">

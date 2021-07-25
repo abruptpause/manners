@@ -12,11 +12,11 @@ export default {
             <li>Designation of a Conservator</li>
             <li>Organ Donation</li>
             <li>Various Medical Terms</li>
-            <li>Advance Care Planning Documentation:</li>
-            <ul>
-              <li>What treatments you want</li>
-              <li>What you don't want</li>
-            </ul>
+          </ul>
+        <li>Advance Care Planning Documentation:</li>
+          <ul>
+            <li>What treatments you want</li>
+            <li>What you don't want</li>
           </ul>
         <li>Facilitate family meetings</li>
         <li>Discuss your wishes with your family and health care provider</li>
@@ -27,7 +27,7 @@ export default {
     title: `Elder Care`,
     description: `Aging is a difficult, but integral part of our life. Having people to count on and care for your loved ones brings not only great quality of life to the patient, but also  incredible peace of mind to those who love them.`,
     content: `<p>Elder Care Doulas are specifically trained to provide holistic (physical, emotional, and spiritual) care for the elderly.</p>
-    <p>Elder Care Doula can care for your aging seniors by simply being a companion through the aging process, as well as by providing ongoing support to both the patient and their families at the time throughout the end-of-life process.</p>
+    <p>An Elder Care Doula can care for your aging seniors by simply being a companion through the aging process, as well as by providing ongoing support to both the patient and their families at the time throughout the end-of-life process.</p>
     <p>Due to the reality of the modern family structure and our increasingly challenged medical system, we need additional options to support and care for the precious, aging population.</p>
     <p>It is time to give the elderly the reverence and care they deserve.</p>`,
     image: `hm-and-mom.png`
@@ -41,7 +41,7 @@ export default {
     title: `End of Life Doula Care`,
     description: `An End-of-Life Doula is a non-medical professional that is trained to provide holistic care (physically, emotionally, and spiritually) to an individual and their family throughout the various end of life stages.`,
     content: `<p>Doulas are known throughout the world by various names: End-ofLife Doula, End of Life Coaches, Death Doula, Soul Midwifes, Transition Guides, Death Midwives, Thanadoula, and Doulagiver.</p>
-    <p>Having been trained in the three phases of end-of-life care, I can be a resource for the patient and the family. - Explaining what they are experiencing and offering appropriate suggestions that they may or may not consider doing for comfort for the patient.</p>
+    <p>Having been trained in the three phases of end-of-life care, I can be a resource for the patient and the family.</p>
     <p>Examples of what I will do:</p>
     <ul>
       <li>Companion to the dying and the dying persons loved ones</li>
@@ -65,7 +65,7 @@ export default {
     image: `sun-and-road.png`
   },
   'reikiHealing': {
-    title: `Reiki Healing`,
+    title: `Reiki Healing - Coming Soon!`,
     description: `Reiki is a form of energy healing that energizes your mind, body, spirit, and soul. Scientific studies have shown that Reiki provides positive benefits when used with traditional medicine. It doesn’t replace Western medicine but complements it.`,
     image: `boat-in-water.png`
   }

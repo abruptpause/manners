@@ -323,10 +323,16 @@ body
 	margin:60px 0px; 
   text-align: justify;
   padding-bottom: 50px;
-  font-size: 24px;
+  // font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   line-height: normal;
   color: rgba(255, 255, 255, 0.95);
+  sup {
+    font-size: 14px;
+    opacity: 0.65;
+    // margin-top: -24px;
+  }
 }
 
 .call-action-color {

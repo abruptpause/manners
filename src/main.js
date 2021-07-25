@@ -4,7 +4,8 @@ import App from './App.vue'
 
 // import styles.
 
-// import '@/assets/styles/roboto.scss'
+// import '@/assets/styles/roboto.scss' /* moved to App.vue */
+
 import '@/assets/styles/bootstrap.3.7.scss'
 import '@/assets/styles/animate.scss'
 import '@/assets/styles/global.scss'
