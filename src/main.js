@@ -11,9 +11,8 @@ import '@/assets/styles/animate.scss'
 import '@/assets/styles/global.scss'
 import 'vueperslides/dist/vueperslides.css'
 
-// import scripts.
 
-// import '@/assets/scripts/wow.js'
+// import scripts.
 
 /* import:
    + font awesome icons (social media links)
@@ -48,7 +47,6 @@ const aosSettings = {
   once: true,
   duration: 700
 }
-
 
 // components:
 

@@ -179,10 +179,12 @@ body
   background-color: $gray;
 }
 
-// .services-box-lightgray {
+.services-box-lightgray {
   // background-color: $lightgray;
-  // background-color: $offwhite;
-// }
+  @media screen and (max-width: 992px) {
+    background-color: $lightgray;
+  }
+}
 
 .services-box
 {
@@ -462,6 +464,13 @@ footer {
     &:hover {
       color: $purple;
       transform: translateY(-2px);
+      @media screen and (max-width: 992px) {
+        transform: scale(1.25) translateY(-2px);
+      }
+    }
+    @media screen and (max-width: 992px) {
+      margin: 18px;
+      transform: scale(1.25);
     }
   }
 }
@@ -1092,12 +1101,13 @@ body
 
 
 // services section
-
+/*
 .service-card {
-  @media (max-width: 991px) {
+  @media (max-width: 992px) {
     margin-bottom: 48px;
   }
 }
+*/
 
 .service-card-image {
   background-size: cover;
@@ -1112,11 +1122,14 @@ body
   user-select: none;
   font-weight: 450;
   opacity: 0.95;
+  @media screen and (max-width: 992px) {
+    font-size: 16px !important;
+  }
 }
 
 
 
-// 3:2 ratio boxes for service cards.
+// 3:2 ratio boxes only used for service cards.
 
 .ratio-3-2 {
   display: flex;
@@ -1125,18 +1138,22 @@ body
 }
 
 .ratio-3-2::before {
+  @media screen and (min-width: 993px) {
   content: "";
   width: 1px;
   margin-left: -1px;
   float: left;
   height: 0;
   padding-top: (3 / 2) * 100%;
+  }
 }
 
 .ratio-3-2::after { /* to clear float */
+  @media screen and (min-width: 993px) {
   content: "";
   display: table;
   clear: both;
+  }
 }
 
 
@@ -1202,6 +1219,37 @@ body
   }
 }
 
+.price-row {
+  padding-top: 18px;
+  padding-bottom: 72px;
+  @media screen and (max-width: 992px) {
+    padding-bottom: 0px;
+  }
+}
+
+.contact-button-row {
+  margin-top: 82px;
+  @media screen and (max-width: 992px) {
+    margin-top: 2px;
+  }
+}
+
+.price-info-row {
+  margin-top: 48px;
+  opacity: 0.85;
+  font-size: 16px;
+  @media screen and (max-width: 992px) {
+    margin-top: 0px;
+    margin-bottom: 48px;
+  }
+}
+
+.social-media-icons-row {
+  margin-top: 24px;
+  margin-bottom: 32px;
+  
+}
+
 
 
 
@@ -1254,6 +1302,10 @@ body
     text-shadow: 0 0 5px $darkpurple, 0 0 5px $darkpurple;
     border-bottom-color: $darkpurple;
     transform: translateY(-4px);
+  }
+  // make button larger on mobile.
+  @media screen and (max-width: 992px) {
+    padding: 32px;
   }
 }
 

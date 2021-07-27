@@ -1,5 +1,5 @@
 <template>
-  <div class="row" style="padding-top: 18px; padding-bottom: 72px;">
+  <div class="row price-row">
   <div class="container" id="Price">
 
   <!-- Title -->
@@ -78,7 +78,7 @@
 	</div>
 
 
-  <div class="row" style="margin-top: 96px;">
+  <div class="row contact-button-row">
     <div class="col-md-4 col-md-offset-4" style="
     padding-top: 0px;
     padding-bottom: 0px;
@@ -88,10 +88,7 @@
     </div>
   </div>
 
-  <div class="row" style="
-    margin-top: 24px;
-    margin-bottom: 60px;
-  ">
+  <div class="row social-media-icons-row">
     <div class="col-md-4 col-md-offset-4 social-media-icons-large">
       <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'facebook' }"/>
       <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'instagram' }"/>
@@ -99,7 +96,7 @@
     </div>
   </div>
 
-    <div class="row" style="margin-top: 48px; opacity: 0.85; font-size: 16px;">
+    <div class="row price-info-row">
 		<div class="col-xs-10 col-xs-offset-1">
       <p>*Purchasing bulk hours provides additional savings. Sliding scale also available in certain cases.</p>
       <p>I don’t want payments to be a deterrent to getting the care families need. We will customize a payment plan that will work.</p>
