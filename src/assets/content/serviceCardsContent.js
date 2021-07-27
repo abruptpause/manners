@@ -40,7 +40,7 @@ export default {
   'endOfLifeDuolaCare': {
     title: `End of Life Doula Care`,
     description: `An End-of-Life Doula is a non-medical professional that is trained to provide holistic care (physically, emotionally, and spiritually) to an individual and their family throughout the various end of life stages.`,
-    content: `<p>Doulas are known throughout the world by various names: End-ofLife Doula, End of Life Coaches, Death Doula, Soul Midwifes, Transition Guides, Death Midwives, Thanadoula, and Doulagiver.</p>
+    content: `<p>Doulas are known throughout the world by various names: End-of-Life Doula, End of Life Coaches, Death Doula, Soul Midwifes, Transition Guides, Death Midwives, Thanadoula, and Doulagiver.</p>
     <p>Having been trained in the three phases of end-of-life care, I can be a resource for the patient and the family.</p>
     <p>Examples of what I will do:</p>
     <ul>

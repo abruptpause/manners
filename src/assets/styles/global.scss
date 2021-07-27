@@ -440,6 +440,12 @@ footer {
     margin: 12px;
     cursor: pointer;
     user-select: none;
+    transition: transform 0.4s ease, color 0.4s ease;
+    color: #333;
+    &:hover {
+      color: #444;
+      transform: translateY(-1px);
+    }
   }
   a {
     color: #878787;
@@ -1290,6 +1296,7 @@ body
     border-color: white;
   }
   &.hover-shadow-dark {
+    padding-bottom: 8px !important;
     &:hover {
       text-shadow: 0 0 1px rgba(136, 136, 136, 0.3), 0 0 0.5px rgba(136, 136, 136, 0.5);
       transform: translateY(-2px);
