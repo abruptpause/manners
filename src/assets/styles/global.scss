@@ -1230,7 +1230,7 @@ body
 .contact-button-row {
   margin-top: 82px;
   @media screen and (max-width: 992px) {
-    margin-top: 2px;
+    margin-top: 12px;
   }
 }
 
@@ -1247,7 +1247,9 @@ body
 .social-media-icons-row {
   margin-top: 24px;
   margin-bottom: 32px;
-  
+  @media screen and (max-width: 992px) {
+    margin-bottom: 48px;
+  }
 }
 
 
@@ -1276,6 +1278,8 @@ body
 
 // transition classes
 
+// $form-grey: #888888;
+
 .hover-shadow {
   transition: transform 0.4s ease, text-shadow 0.4s ease, border-color 0.4s ease;
   border-bottom: 2px solid transparent;
@@ -1284,6 +1288,13 @@ body
     text-shadow: 0 0 1px rgba(255, 255, 255, 0.5), 0 0 0.5px rgba(255, 255, 255, 0.75);
     transform: translateY(-2px);
     border-color: white;
+  }
+  &.hover-shadow-dark {
+    &:hover {
+      text-shadow: 0 0 1px rgba(136, 136, 136, 0.3), 0 0 0.5px rgba(136, 136, 136, 0.5);
+      transform: translateY(-2px);
+      border-color: rgba(0, 0, 0, 0.8);   
+    }
   }
 }
 

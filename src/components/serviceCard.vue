@@ -12,7 +12,7 @@
 			<p>{{description}}</p>
 
       <!-- read more/less button -->
-      <span v-if="content" class="toggle-btn" @click="toggle">{{toggleBtnText}}</span>
+      <span v-if="content" class="toggle-btn hover-shadow hover-shadow-dark" style="display: inline-block; padding-left: 1px; padding-bottom: 4px; padding-right: 1px; margin-bottom: 10px;" @click="toggle">{{toggleBtnText}}</span>
 
       <!-- content -->
       <!-- <div v-if="content" v-show="showContent" v-html="content" :class="contentClass" /> -->

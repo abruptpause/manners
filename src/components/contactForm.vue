@@ -4,7 +4,7 @@
 <div class="underlay" :class="underlayClass">
 <div class="contact-form" :class="contactFormClass">
   
-  <p class="close-contact-form" @click="closeForm">Close</p>
+  <p class="close-contact-form hover-shadow hover-shadow-dark" @click="closeForm">Close</p>
 
   <div class="contact-form-border-container">
     <form @submit="submitForm">
@@ -160,7 +160,11 @@
     }
 
     .close-contact-form {
-      position: absolute; top: 0; right: 0; margin-top: 48px; margin-right: 48px; z-index: 4; text-align: right; cursor: pointer
+      position: absolute; top: 0; right: 0; margin-top: 48px; margin-right: 48px; z-index: 4; text-align: right; cursor: pointer; 
+      // transition: all 0.1s ease;
+      // &:hover {
+        // font-weight: bold;
+      // }
     }
 
     // textarea + label component.
