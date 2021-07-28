@@ -62,13 +62,9 @@
 
     <!-- content -->
     <div class="row">
-      <!-- <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 about-us-box wow fadeInUp animated" style="opacity: 0.95;"> -->
       <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 about-us-box" style="opacity: 0.95;">
-
           <h2 class="about-me-h2" data-aos="fade-up">Heather Manners</h2>
-
           <br />
-
           <div data-aos="fade-up">
           <p style="font-weight: 350">Why did I want to become an End-of-Life Doula? The fact is, I’ve been one for most of my life. My mom had a massive heart attack when I was twelve years old. She survived the heart attack but was limited on what she was able to do. Over the years, I documented twelve pages of health issues, doctor appointments, specialists, medications, and notes while caring for her until her end of life.</p>
           <p>When mom passed away, I realized the natural talent I had for  caring for people and helping them during difficult times. I searched to see if there was an opportunity for me to make a career out of taking care of people and an End-ofLife Doula is what I found. As my mom and I went through her life, one of the things that I noticed was that we were always making decisions in the middle of a crisis, which is never the best time to make a decision. Even when things were planned, I always felt like I wasn’t getting all the information to make the right decisions, didn’t always know the right questions to ask, the agencies to go through, or the resources that would have helped along the way. There should have been easier ways to get answers or someone that could help me get the answers.</p>
@@ -77,17 +73,13 @@
           <p>As an Instructor, I teach courses such as Advertising, Typography, Photoshop, Illustrator, InDesign, Video Editing, Principles of Design and HTML. I encourage students to use their talents to create individual projects with an eye toward creating a meaningful portfolio that will help them attain employment. Instruction  includes how to create advertising brochures, newspaper ads, reports, invitations, newsletters, and other printed and digital materials.</p>
           <p>Along with what I learned through Doulagivers, my background in Marketing Communications, graphic design, and teaching, I am able to offer other opportunities to help with planning and enhancing different aspects of my business and supporting the families and patients I help. Hosting monthly Death Cafes is another way I plan to help the community to understand that everyone can have a peaceful death and to not be afraid to talk about what they want when they are coming to the end of their life.</p>
           </div>
-
       </div>
-
     </div>
-
   </div>
 </div>
 
 <!-- "Testimonials" Carousel -->
 <div class="call-action-color" id="Testimonial" style="padding-top: 36px; margin-top: 0px; padding-bottom: 78px;">
-
 	<div class="container">
 
     <!-- title -->
@@ -103,9 +95,7 @@
     <!-- carousel -->
     <carousel :content="testimonials" duration="15000" />
 
-
 	</div>	
-
 </div>
 
 <!-- Citations -->
@@ -126,9 +116,9 @@
     <div class="container">
     	<div class="row">
         <div class="col-sm-12 social-media-icons">
-          <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'facebook' }"/>
-          <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'instagram' }"/>
-          <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'linkedin' }"/>
+          <a :href="socialMedia.facebook" target="_blank"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'facebook' }"/></a>
+          <a :href="socialMedia.instagram" target="_blank"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'instagram' }"/></a>
+          <a :href="socialMedia.linkedin" target="_blank"><font-awesome-icon :icon="{ prefix: 'fab', iconName: 'linkedin' }"/></a>
         </div>
       </div>
       <div class="row">
@@ -160,6 +150,12 @@ export default {
   components: { carousel, contactForm, navbar, services, prices, dotLoader, HeroImage },
   data () {
     return {
+      socialMedia: {
+        facebook: 'https://www.facebook.com/YourPathHWM',
+        linkedin: 'https://www.linkedin.com/in/heather-manners',
+        instagram: 'https://www.instagram.com/your_path_hwm/',
+        email: 'yourpathhwm@gmail.com'
+      },
       formState: false,
       testimonials: [
         `<p>So my friend Heather Manners is starting her own business offering end of life doula services. (Don't worry; while I could make a good guess, I didn't quite know all the things that entailed when she first mentioned it, either. Usually I think of doulas as the nice, well-informed,  probably pretty hippie-vibes lady who helps expectant mothers deliver their kiddos. Turns out, some doulas help people leave this world as well as coming into it.) The thing is, when she and I were colleagues, I watched her deal with the slow passing of her mother over the span of several years due to serious illness. She faced a gutwrenching situation with more love, compassion, patience, and strength than I think I could ever muster, and it's exactly those sorts of qualities that combine into what we call grace. While I really hope you don't need her services? If you're in similarly difficult circumstances regarding the care of a loved one, she is exactly the sort of person you want on your side and you should consider reaching out when she has her new site all set up.</p> <h4>~ Melanie</h4>`,
