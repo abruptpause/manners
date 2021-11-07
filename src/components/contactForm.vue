@@ -43,7 +43,11 @@
       <div class="col-md-5 col-md-offset-1 form-input">
         <button type="submit">{{sendText}}</button>
       </div>
-
+      
+      <div class="col-md-5 col-md-offset-1" style="margin-top: 28px;display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
+          <p style="margin-bottom: 6px; font-size: 13px; opacity: 0.95; font-weight: 450">(267) 908-4998</p>
+          <p style="margin-bottom: 6px; font-size: 13px; opacity: 0.95; font-weight: 450;">Heather@YourPathhwm.com</p>
+      </div>
     </form>
     <!-- <button @click="testFunc">TEST</button> -->
   </div>
