@@ -35,7 +35,7 @@
 
 <script>
 import serviceCard from './serviceCard.vue'
-import serviceCardsContent from '../assets/content/serviceCardsContent'
+import serviceCardsContent from '../assets/content/textContent'
 
 export default {
   components: { serviceCard },

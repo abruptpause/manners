@@ -1,14 +1,14 @@
 <template>
-  <mainPage />
+  <home />
 </template>
 
 <script>
-import mainPage from './components/mainPage.vue'
+import home from './components/home.vue'
 
 export default {
   name: 'App',
   components: {
-    mainPage
+    home
   },
   async created() {
     await require('@/assets/styles/roboto.scss')
